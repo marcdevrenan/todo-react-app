@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import ToDoList from "./components/ToDoList";
+import About from "./components/About";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="d-flex align-items-center justify-content-center" style={{ minHeight:"100vh" }}>
+      <div className="w-100" style={{ maxWidth:"400px" }}>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={ToDoList} />
+            <Route path="/about" component={About} />
+          </Switch>
+        </BrowserRouter>
+      </div>
+    </Container>
   );
 }
 
