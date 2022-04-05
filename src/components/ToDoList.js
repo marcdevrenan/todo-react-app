@@ -59,7 +59,7 @@ export default function ToDoList() {
                     <h3>Add Task</h3>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group id="task">
-                            <Form.Control type="text" onChange={(e) => setTask(e.target.value)} value={task}></Form.Control>
+                            <Form.Control type="text" onChange={(e) => setTask(e.target.value)} value={task} required></Form.Control>
                         </Form.Group>
                         <Button className="w-100 mt-4" variant="outline-primary" type="submit">Submit</Button>
                         <Link className="w-100 mt-4 btn btn-outline-info" to="/about">About App</Link>
